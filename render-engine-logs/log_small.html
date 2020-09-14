@@ -1,0 +1,3159 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function expandCollapse() {
+            for (var i = 0; i < expandCollapse.arguments.length; i++) {
+                var element = document.getElementById(expandCollapse.arguments[i]);
+                element.style.display = (element.style.display == "none") ? "block" : "none";
+
+                var img = document.getElementById(expandCollapse.arguments[i] + "img");
+                img.src = (element.style.display == "none") ? "../common/expand.gif" : "../common/collapse.gif";
+            }
+        }
+
+        function toggleVisibilityByClass(className) {
+            var elements = document.getElementsByTagName('*');
+            for (var i = 0; i < elements.length; i++) {
+                var node = elements.item(i);
+                for (var j = 0; j < node.attributes.length; j++) {
+                    if (node.attributes.item(j).nodeName == 'class') {
+                        if (node.attributes.item(j).nodeValue.indexOf(className + ' ') == 0)
+                            node.style.display = ((node.style.display == "none") ? "block" : "none");
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            margin: 10px;
+            padding: 0;
+            font-size: 12px;
+            font-family: "Lucida Sans Unicode", Monaco, lucida, helvetica, sans-serif;
+        }
+
+        a img {
+            border: none;
+        }
+
+        table {
+            font-size: 12px;
+            font-family: Arial;
+            padding: 5px 5px 5px 5px;
+        }
+
+        div {
+            float: left;
+            font-size: 12px;
+            font-family: courier, monospace;
+            /*border: 1px solid black;*/
+        }
+
+        div.line {
+            white-space: pre;
+            clear: both;
+            padding-left: 15px;
+            width: 100%;
+        }
+
+        div.catstart {
+            white-space: pre;
+            clear: both;
+            padding-left: 0px;
+            width: 100%;
+        }
+
+        div.vistoggle {
+            float: left;
+            margin-right: 15px;
+        }
+
+        div.catimage {
+            float: left;
+            width: 13px;
+            padding-top: 3px;
+            padding-left: 2px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="ERROR vistoggle"><a href="javascript: toggleVisibilityByClass('ERROR')">hide ERROR</a></div>
+    <div class="ERROR vistoggle" style="display:none;"><a href="javascript: toggleVisibilityByClass('ERROR')">show
+        ERROR</a></div>
+    <div class="WARNING vistoggle"><a href="javascript: toggleVisibilityByClass('WARNING')">hide WARNING</a></div>
+    <div class="WARNING vistoggle" style="display:none;"><a href="javascript: toggleVisibilityByClass('WARNING')">show
+        WARNING</a></div>
+    <div class="INFO vistoggle"><a href="javascript: toggleVisibilityByClass('INFO')">hide INFO</a></div>
+    <div class="INFO vistoggle" style="display:none;"><a href="javascript: toggleVisibilityByClass('INFO')">show
+        INFO</a></div>
+    <div class="DETAILED vistoggle"><a href="javascript: toggleVisibilityByClass('DETAILED')">hide DETAILED</a></div>
+    <div class="DETAILED vistoggle" style="display:none;"><a href="javascript: toggleVisibilityByClass('DETAILED')">show
+        DETAILED</a></div>
+    <div class="DEBUG vistoggle"><a href="javascript: toggleVisibilityByClass('DEBUG')">hide DEBUG</a></div>
+    <div class="DEBUG vistoggle" style="display:none;"><a href="javascript: toggleVisibilityByClass('DEBUG')">show
+        DEBUG</a></div>
+    <div class="DEBUGVERBOSE vistoggle"><a href="javascript: toggleVisibilityByClass('DEBUGVERBOSE')">hide
+        DEBUGVERBOSE</a></div>
+    <div class="DEBUGVERBOSE vistoggle" style="display:none;"><a
+            href="javascript: toggleVisibilityByClass('DEBUGVERBOSE')">show DEBUGVERBOSE</a></div>
+    <div class="MAXLEVEL vistoggle"><a href="javascript: toggleVisibilityByClass('MAXLEVEL')">hide MAXLEVEL</a></div>
+    <div class="MAXLEVEL vistoggle" style="display:none;"><a href="javascript: toggleVisibilityByClass('MAXLEVEL')">show
+        MAXLEVEL</a></div>
+</div>
+<br><br>
+<div class="INFO line">
+    <div>12:35:25 348MB INFO:</div>
+    <div>Redshift for 3ds Max 2021
+    </div>
+</div>
+<div class="INFO line">
+    <div>12:35:25 348MB INFO:</div>
+    <div>Version 3.0.22, Jun 9 2020
+    </div>
+</div>
+<div class="INFO line">
+    <div>12:35:25 348MB INFO:</div>
+    <div>Host application: Autodesk 3dsMax 23.0
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:25 348MB DETAILED:</div>
+    <div>Plugin filename: C:\Program Files\Autodesk\3ds Max 2021\PlugIns\redshift4max.dlr
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:25 348MB DETAILED:</div>
+    <div>Plugin path: C:\Program Files\Autodesk\3ds Max 2021\PlugIns
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:25 348MB DETAILED:</div>
+    <div>Local data path: C:\ProgramData\Redshift
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:25 348MB DETAILED:</div>
+    <div>Core data path: R:\DIST\redshift_v3.0.22\Redshift
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:25 348MB DETAILED:</div>
+    <div>Primary license path: R:\LIC
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:25 348MB DETAILED:</div>
+    <div>Procedurals path: R:\DIST\redshift_v3.0.22\Redshift\Procedurals
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:25 348MB DETAILED:</div>
+    <div>Preferences file: C:\ProgramData\Redshift\preferences.xml
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:26 378MB DETAILED:</div>
+    <div><b>Creating CUDA contexts</b>
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:26 378MB DETAILED:</div>
+    <div> CUDA init ok
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:26 378MB DETAILED:</div>
+    <div> Ordinals: { 0 1 }
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:26 602MB DEBUG:</div>
+    <div>Querying texture cache budget from preferences.xml: 32 GB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:26 602MB DEBUG:</div>
+    <div>Querying cache path from preferences.xml: %LOCALAPPDATA%\Redshift\Cache
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:26 602MB DEBUG:</div>
+    <div>Creating cache path C:\Users\adi\AppData\Local\Redshift\Cache
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:26 602MB DEBUG:</div>
+    <div> Enforcing shader cache budget...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:26 602MB DEBUG:</div>
+    <div> Enforcing texture cache budget...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:26 602MB DEBUG:</div>
+    <div> Collecting files...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:26 602MB DEBUG:</div>
+    <div> Total size for 2067 files 32751.80MB (budget 32768.00MB)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:26 602MB DEBUG:</div>
+    <div> Under budget. Done.
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:26 602MB DEBUG:</div>
+    <div> Creating mesh cache...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:27 602MB DEBUG:</div>
+    <div> Done
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>12:35:27 602MB DETAILED:</div>
+    <div>Cache path: C:\Users\adi\AppData\Local\Redshift\Cache
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:27 607MB DEBUG:</div>
+    <div>3ds Max preference 'Open Message Window on Error' is OFF
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:27 607MB DEBUG:</div>
+    <div>Initialization took 2011 ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:37 1031MB DEBUG:</div>
+    <div>Redshift Global Utility Plugin START
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:37 1031MB DEBUG:</div>
+    <div>REDSHIFT_3DSMAX_CUDAINIT = -1 : CUDA will be initialized on its own thread when rendering for the first time
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:37 1031MB DEBUG:</div>
+    <div>Load plugin config from C:\Users\adi\AppData\Local\Autodesk\3dsMax\2021 - 64bit\ENU\en-US\plugcfg\redshift.cfg
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>12:35:37 1031MB DEBUG:</div>
+    <div>Config version: 3.0.22
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:06 1356MB DEBUG:</div>
+    <div>Units changed
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:06 1356MB DEBUG:</div>
+    <div>Purging 0 shaderball scenes
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:06 1356MB DEBUG:</div>
+    <div>Units changed
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:06 1356MB DEBUG:</div>
+    <div>Purging 0 shaderball scenes
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:06 1356MB DEBUG:</div>
+    <div>Units changed
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:06 1356MB DEBUG:</div>
+    <div>Purging 0 shaderball scenes
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:06 1356MB DEBUG:</div>
+    <div>Units changed
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:06 1356MB DEBUG:</div>
+    <div>Purging 0 shaderball scenes
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:06 1356MB DEBUG:</div>
+    <div>Redshift Global Utility Plugin LOAD
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:10 1561MB INFO:</div>
+    <div>OpenGL version=3.3.0 NVIDIA 445.87
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:10 1567MB DEBUG:</div>
+    <div>Save plugin config to C:\Users\adi\AppData\Local\Autodesk\3dsMax\2021 - 64bit\ENU\en-US\plugcfg\redshift.cfg
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:11 1569MB DEBUG:</div>
+    <div>[0x0000015D5A956500] rsMaxRenderer::Open called from thread 8512
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1569MB DETAILED:</div>
+    <div>
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1569MB DETAILED:</div>
+    <div><b>Redshift Initialized</b>
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1569MB DETAILED:</div>
+    <div><b> Version: 3.0.22, Jun 9 2020</b>
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1569MB DETAILED:</div>
+    <div> Windows Platform (Windows 10 Pro)
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1569MB DETAILED:</div>
+    <div> Release Build
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1569MB DETAILED:</div>
+    <div> Number of CPU HW threads: 48
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1569MB DETAILED:</div>
+    <div> CPU speed: 3.80 GHz
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1569MB DETAILED:</div>
+    <div> Total system memory: 127.87 GB
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1569MB DETAILED:</div>
+    <div> TDR delay: 96s
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> Driver version: 445.87
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> Current working dir: C:\Windows\system32
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:11 1570MB DEBUG:</div>
+    <div>Detected env variable REDSHIFT_PATHOVERRIDE_FILE. Loading path override data from file:
+        R:\START\pathOverride.txt
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div><b>Initializing GPUComputing module (CUDA). Ordinal 0</b>
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> CUDA Ver: 11000
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> Device 1/2 : GeForce RTX 2070
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> Compute capability: 7.5
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> Num multiprocessors: 36
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> PCI busID: 1, deviceID: 0, domainID: 0
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> Theoretical memory bandwidth: 448.063995 GB/Sec
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1578MB DETAILED:</div>
+    <div> Measured PCIe bandwidth (pinned CPU-&gt;GPU): 11.932490 GB/s
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1578MB DETAILED:</div>
+    <div> Measured PCIe bandwidth (pinned GPU-&gt;CPU): 12.053712 GB/s
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1586MB DETAILED:</div>
+    <div> Measured PCIe bandwidth (paged CPU-&gt;GPU): 7.551273 GB/s
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1586MB DETAILED:</div>
+    <div> Measured PCIe bandwidth (paged GPU-&gt;CPU): 7.138023 GB/s
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1586MB DETAILED:</div>
+    <div> Estimated GPU-&gt;CPU latency (0): 0.045219 ms
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1586MB DETAILED:</div>
+    <div> Estimated GPU-&gt;CPU latency (1): 0.046995 ms
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1586MB DETAILED:</div>
+    <div> Estimated GPU-&gt;CPU latency (2): 0.045948 ms
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1586MB DETAILED:</div>
+    <div> Estimated GPU-&gt;CPU latency (3): 0.045177 ms
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> New CUDA context created
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1570MB DETAILED:</div>
+    <div> Available memory: 6302.1117 MB out of 8192.0000 MB
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1579MB DETAILED:</div>
+    <div><b>Initializing GPUComputing module (CUDA). Ordinal 1</b>
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1579MB DETAILED:</div>
+    <div> CUDA Ver: 11000
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1579MB DETAILED:</div>
+    <div> Device 2/2 : GeForce RTX 2070
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1579MB DETAILED:</div>
+    <div> Compute capability: 7.5
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1579MB DETAILED:</div>
+    <div> Num multiprocessors: 36
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1579MB DETAILED:</div>
+    <div> PCI busID: 33, deviceID: 0, domainID: 0
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1579MB DETAILED:</div>
+    <div> Theoretical memory bandwidth: 448.063995 GB/Sec
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1587MB DETAILED:</div>
+    <div> Measured PCIe bandwidth (pinned CPU-&gt;GPU): 12.111289 GB/s
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1587MB DETAILED:</div>
+    <div> Measured PCIe bandwidth (pinned GPU-&gt;CPU): 12.183770 GB/s
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1595MB DETAILED:</div>
+    <div> Measured PCIe bandwidth (paged CPU-&gt;GPU): 7.662601 GB/s
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1595MB DETAILED:</div>
+    <div> Measured PCIe bandwidth (paged GPU-&gt;CPU): 7.255020 GB/s
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1595MB DETAILED:</div>
+    <div> Estimated GPU-&gt;CPU latency (0): 0.042022 ms
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:11 1595MB DETAILED:</div>
+    <div> Estimated GPU-&gt;CPU latency (1): 0.044535 ms
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:12 1595MB DETAILED:</div>
+    <div> Estimated GPU-&gt;CPU latency (2): 0.044226 ms
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:12 1595MB DETAILED:</div>
+    <div> Estimated GPU-&gt;CPU latency (3): 0.043967 ms
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:12 1579MB DETAILED:</div>
+    <div> New CUDA context created
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:12 1579MB DETAILED:</div>
+    <div> Available memory: 6540.3500 MB out of 8192.0000 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 1588MB DEBUG:</div>
+    <div><b>Determining peer-to-peer capability (NVLink or PCIe)</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 1588MB DEBUG:</div>
+    <div> Done
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 1850MB DEBUG:</div>
+    <div>OptiX denoiser init...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 1850MB DEBUG:</div>
+    <div> Selecting device
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 1850MB DEBUG:</div>
+    <div> Selected device GeForce RTX 2070 (ordinal 1)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 2014MB DEBUG:</div>
+    <div>OptixRT init...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 2016MB DEBUG:</div>
+    <div> Load/set programs
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 2024MB DEBUG:</div>
+    <div> Ok!
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 2024MB DEBUG:</div>
+    <div>OptixRT init...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 2030MB DEBUG:</div>
+    <div> Load/set programs
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:12 2032MB DEBUG:</div>
+    <div> Ok!
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:13 3981MB DETAILED:</div>
+    <div>
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:13 3981MB DETAILED:</div>
+    <div><b>Loading Redshift procedural extensions...</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 3981MB DEBUG:</div>
+    <div> From path: R:\DIST\redshift_v3.0.22\Redshift\Procedurals\
+    </div>
+</div>
+<div class="DETAILED line">
+    <div>13:11:13 3981MB DETAILED:</div>
+    <div> Done!
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 3989MB INFO:</div>
+    <div>=================================================================================================
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 3989MB INFO:</div>
+    <div>=================================================================================================
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 3989MB INFO:</div>
+    <div>Starting render job...
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 3989MB INFO:</div>
+    <div>=================================================================================================
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 3989MB INFO:</div>
+    <div>Redshift for 3ds Max 2021
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 3989MB INFO:</div>
+    <div>Version 3.0.22, Jun 9 2020
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 3989MB INFO:</div>
+    <div>=================================================================================================
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 3989MB DEBUG:</div>
+    <div>Time to initialize render: 1.90s
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 3990MB DEBUG:</div>
+    <div>[0x0000015D5A956500] rsMaxRenderer::Render called from thread 8512
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 3990MB INFO:</div>
+    <div>Translating scene [frame 0]...
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 4527MB INFO:</div>
+    <div>Could not find parameter 'gamma0' while translating 'RsDomeLight VUE 3_0x0000015DA2309F50'.
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 4527MB INFO:</div>
+    <div>Could not find parameter 'gamma1' while translating 'RsDomeLight VUE 3_0x0000015DA2309F50'.
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 4543MB INFO:</div>
+    <div>Scene translation time: 0.26s
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4543MB DEBUG:</div>
+    <div>RS_Renderer_Render START
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 4546MB INFO:</div>
+    <div><b><font size="4">=================================================================================================</font></b>
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 4546MB INFO:</div>
+    <div><b><font size="4">Rendering frame 0...</font></b>
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 4546MB INFO:</div>
+    <div>AMM enabled
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 4546MB INFO:</div>
+    <div><b><font size="4">=================================================================================================</font></b>
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 4554MB INFO:</div>
+    <div>License acquired
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:11:13 4555MB INFO:</div>
+    <div>License for redshift-core 2021.04 (permanent)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4555MB DEBUG:</div>
+    <div> 88ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4560MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4560MB DEBUG:</div>
+    <div><b>Preparing ray tracing hierarchy for meshes</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4560MB DEBUG:</div>
+    <div> Time to process 0 meshes: 0ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4562MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4562MB DEBUG:</div>
+    <div><b>Processing 7 textures</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4563MB DEBUG:</div>
+    <div> Time to process textures: 0.003149 seconds
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4565MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4565MB DEBUG:</div>
+    <div><b>Preparing materials and shaders</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:13 4604MB DEBUG:</div>
+    <div>HID rehost=e5fef7e2bbba7bf5036da469b1259d8da1d88abf.-132
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4396MB DEBUG:</div>
+    <div> Time to process all materials and shaders: 0.403858 seconds
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4998MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4998MB DEBUG:</div>
+    <div><b>Allocating GPU mem...(device 0)</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4963MB DEBUG:</div>
+    <div> Done (Allocator size: 4624 MB. CUDA reported free mem before: 5155 MB, after: 1159 MB)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4963MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4963MB DEBUG:</div>
+    <div><b>Allocating GPU mem...(device 1)</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4963MB DEBUG:</div>
+    <div> Done (Allocator size: 5437 MB. CUDA reported free mem before: 6059 MB, after: 621 MB)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4963MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4963MB DEBUG:</div>
+    <div><b>Allocating GPU mem for ray tracing hierarchy processing</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4963MB DEBUG:</div>
+    <div> Allocating VRAM for device 0 (GeForce RTX 2070)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4963MB DEBUG:</div>
+    <div> Redshift can use up to 4624 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4963MB DEBUG:</div>
+    <div> Fixed: 0 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4964MB DEBUG:</div>
+    <div> Geo: 3591 MB, Tex: 255 MB, Rays: 775 MB, NRPR: 262144
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4964MB DEBUG:</div>
+    <div> Done! ( 15ms). CUDA reported free mem: 1159 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4964MB DEBUG:</div>
+    <div> Allocating VRAM for device 1 (GeForce RTX 2070)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4964MB DEBUG:</div>
+    <div> Redshift can use up to 5437 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4964MB DEBUG:</div>
+    <div> Fixed: 0 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4966MB DEBUG:</div>
+    <div> Geo: 4405 MB, Tex: 255 MB, Rays: 775 MB, NRPR: 262144
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4966MB DEBUG:</div>
+    <div> Done! ( 16ms). CUDA reported free mem: 621 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4966MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4966MB DEBUG:</div>
+    <div><b>Ray Tracing Hierarchy Info:</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4966MB DEBUG:</div>
+    <div> Max depth: 128. MaxNumLeafPrimitives: 8
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4966MB DEBUG:</div>
+    <div> Extents: (-387.268127 -328.333740 -2.127577) - (343.258911 393.177124 4.617556)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4990MB DEBUG:</div>
+    <div> Time to create tree: 33 ms (0 32 0)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4988MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4988MB DEBUG:</div>
+    <div><b>Irradiance point cloud...</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4988MB DEBUG:</div>
+    <div> Allocating VRAM for device 0 (GeForce RTX 2070)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4988MB DEBUG:</div>
+    <div> Redshift can use up to 4624 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4988MB DEBUG:</div>
+    <div> Fixed: 262 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4995MB DEBUG:</div>
+    <div> Geo: 1 MB, Tex: 1074 MB, Rays: 3222 MB, NRPR: 1321696
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4995MB DEBUG:</div>
+    <div> Done! ( 22ms). CUDA reported free mem: 1159 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4995MB DEBUG:</div>
+    <div> Allocating VRAM for device 1 (GeForce RTX 2070)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4995MB DEBUG:</div>
+    <div> Redshift can use up to 5437 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 4995MB DEBUG:</div>
+    <div> Fixed: 262 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 5005MB DEBUG:</div>
+    <div> Geo: 1 MB, Tex: 1630 MB, Rays: 3480 MB, NRPR: 1435136
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:14 5005MB DEBUG:</div>
+    <div> Done! ( 25ms). CUDA reported free mem: 621 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5310MB DEBUG:</div>
+    <div> Total num points before: 141 (num new: 141)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5310MB DEBUG:</div>
+    <div> Total num points before: 141 (num new: 141)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5319MB DEBUG:</div>
+    <div> Total num points before: 272 (num new: 135)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5321MB DEBUG:</div>
+    <div> Total num points before: 272 (num new: 135)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5323MB DEBUG:</div>
+    <div> Total num points before: 553 (num new: 281)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5323MB DEBUG:</div>
+    <div> Total num points before: 553 (num new: 281)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5331MB DEBUG:</div>
+    <div> Total num points before: 1035 (num new: 482)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5331MB DEBUG:</div>
+    <div> Total num points before: 1035 (num new: 482)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5335MB DEBUG:</div>
+    <div> Total num points before: 1773 (num new: 738)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5336MB DEBUG:</div>
+    <div> Total num points before: 1773 (num new: 738)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5343MB DEBUG:</div>
+    <div> Total num points before: 2770 (num new: 997)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:15 5346MB DEBUG:</div>
+    <div> Total num points before: 2770 (num new: 997)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5350MB DEBUG:</div>
+    <div> Total num points before: 3789 (num new: 1019)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5353MB DEBUG:</div>
+    <div> Total num points before: 3789 (num new: 1019)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5354MB DEBUG:</div>
+    <div> Total num points before: 4831 (num new: 1042)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5355MB DEBUG:</div>
+    <div> Total num points before: 4831 (num new: 1042)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5354MB DEBUG:</div>
+    <div> Total num points before: 6087 (num new: 1256)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5368MB DEBUG:</div>
+    <div> Total num points before: 6087 (num new: 1256)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5355MB DEBUG:</div>
+    <div> Total num points before: 7680 (num new: 1593)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5355MB DEBUG:</div>
+    <div> Total num points before: 7680 (num new: 1593)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5356MB DEBUG:</div>
+    <div> Total num points before: 9631 (num new: 1951)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:16 5355MB DEBUG:</div>
+    <div> Total num points before: 9631 (num new: 1951)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7535MB DEBUG:</div>
+    <div> Total irradiance point cloud construction time 8.2s
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7535MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7535MB DEBUG:</div>
+    <div><b>Irradiance cache point hierarchy...</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7535MB DEBUG:</div>
+    <div> Allocating VRAM for device 0 (GeForce RTX 2070)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7535MB DEBUG:</div>
+    <div> Redshift can use up to 4624 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7535MB DEBUG:</div>
+    <div> Fixed: 265 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7544MB DEBUG:</div>
+    <div> Geo: 1 MB, Tex: 1637 MB, Rays: 2653 MB, NRPR: 1076896
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7544MB DEBUG:</div>
+    <div> Done! ( 22ms). CUDA reported free mem: 1149 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7544MB DEBUG:</div>
+    <div> Allocating VRAM for device 1 (GeForce RTX 2070)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7544MB DEBUG:</div>
+    <div> Redshift can use up to 5437 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7544MB DEBUG:</div>
+    <div> Fixed: 265 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7554MB DEBUG:</div>
+    <div> Geo: 1 MB, Tex: 1637 MB, Rays: 3419 MB, NRPR: 1415232
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:23 7554MB DEBUG:</div>
+    <div> Done! ( 22ms). CUDA reported free mem: 621 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:27 6168MB DEBUG:</div>
+    <div> Primary: Computed 65536, Re-used 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:27 6182MB DEBUG:</div>
+    <div> Primary: Computed 2699, Re-used 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:27 6195MB DEBUG:</div>
+    <div> Secondary: Computed 2808, Re-used 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:28 6197MB DEBUG:</div>
+    <div> Primary: Computed 840, Re-used 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:28 6198MB DEBUG:</div>
+    <div> Secondary: Computed 1051, Re-used 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6198MB DEBUG:</div>
+    <div> Primary: Computed 1186, Re-used 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6198MB DEBUG:</div>
+    <div> Secondary: Computed 1587, Re-used 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6182MB DEBUG:</div>
+    <div> Optimizing primary...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6158MB DEBUG:</div>
+    <div> Expanding...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6158MB DEBUG:</div>
+    <div> Averaging...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6149MB DEBUG:</div>
+    <div> Total num ICPs: 75707
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Time to construct ICP tree: 89ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Tree depth: 25
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Min/Max/Avg ICPs in a leaf: 1 1354 233
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Num nodes: 3689
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Time to optimize ICP tree: 15ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Done
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Optimizing secondary...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Total ICP hierarchy construction time 7.7s
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div><b>Rendering blocks... (resolution: 5000x3500, block size: 256, unified minmax: [64,512])</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Allocating VRAM for device 0 (GeForce RTX 2070)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6161MB DEBUG:</div>
+    <div> Redshift can use up to 4624 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6158MB DEBUG:</div>
+    <div> Fixed: 5 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6168MB DEBUG:</div>
+    <div> Geo: 1 MB, Tex: 1637 MB, Rays: 2892 MB, NRPR: 748576
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6168MB DEBUG:</div>
+    <div> Done! ( 27ms). CUDA reported free mem: 1149 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6168MB DEBUG:</div>
+    <div> Allocating VRAM for device 1 (GeForce RTX 2070)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6168MB DEBUG:</div>
+    <div> Redshift can use up to 5437 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6168MB DEBUG:</div>
+    <div> Fixed: 5 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6177MB DEBUG:</div>
+    <div> Geo: 1 MB, Tex: 1637 MB, Rays: 3526 MB, NRPR: 925408
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6177MB DEBUG:</div>
+    <div> Done! ( 35ms). CUDA reported free mem: 621 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6184MB DEBUG:</div>
+    <div> Block 1/280 (9,6) rendered by GPU 1 in 126ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6183MB DEBUG:</div>
+    <div> VRAM adjustment needed for device 1 - due to texture cache change. Suggested amount: 945.254883 MB.
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6176MB DEBUG:</div>
+    <div> (Device 1) Time to dealloc: 1 ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6176MB DEBUG:</div>
+    <div> Block 2/280 (10,6) rendered by GPU 0 in 132ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6175MB DEBUG:</div>
+    <div> VRAM adjustment needed for device 0 - due to texture cache change. Suggested amount: 1063.771851 MB.
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6169MB DEBUG:</div>
+    <div> (Device 0) Time to dealloc: 1 ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6167MB DEBUG:</div>
+    <div> Geo: 1 MB, Tex: 1532 MB, Rays: 3835 MB, NRPR: 1011360
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6167MB DEBUG:</div>
+    <div> (Device 1) Time to realloc: 20 ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6167MB DEBUG:</div>
+    <div> (Device 1) Time to upload NG/TP first time: 0 ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6167MB DEBUG:</div>
+    <div> (Device 1) Time to upload NG/TP: 0 ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:30 6170MB DEBUG:</div>
+    <div> (Device 1) Time to upload tiles: 1.211900 ms ; 0 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6171MB DEBUG:</div>
+    <div> Geo: 1 MB, Tex: 1483 MB, Rays: 3070 MB, NRPR: 798240
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6171MB DEBUG:</div>
+    <div> (Device 0) Time to realloc: 39 ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6171MB DEBUG:</div>
+    <div> (Device 0) Time to upload NG/TP first time: 0 ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6171MB DEBUG:</div>
+    <div> (Device 0) Time to upload NG/TP: 0 ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6174MB DEBUG:</div>
+    <div> (Device 0) Time to upload tiles: 1.154100 ms ; 0 MB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6176MB DEBUG:</div>
+    <div> Block 3/280 (10,7) rendered by GPU 1 in 120ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6173MB DEBUG:</div>
+    <div> Block 4/280 (9,7) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6170MB DEBUG:</div>
+    <div> Block 5/280 (8,8) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6167MB DEBUG:</div>
+    <div> Block 6/280 (8,7) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6164MB DEBUG:</div>
+    <div> Block 7/280 (8,6) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6161MB DEBUG:</div>
+    <div> Block 8/280 (8,5) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6158MB DEBUG:</div>
+    <div> Block 9/280 (9,5) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6155MB DEBUG:</div>
+    <div> Block 11/280 (11,5) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6152MB DEBUG:</div>
+    <div> Block 10/280 (10,5) rendered by GPU 0 in 152ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6150MB DEBUG:</div>
+    <div> Block 12/280 (11,6) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6148MB DEBUG:</div>
+    <div> Block 13/280 (11,7) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6145MB DEBUG:</div>
+    <div> Block 14/280 (11,8) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6143MB DEBUG:</div>
+    <div> Block 15/280 (10,8) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:31 6141MB DEBUG:</div>
+    <div> Block 16/280 (9,8) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6138MB DEBUG:</div>
+    <div> Block 17/280 (7,9) rendered by GPU 0 in 145ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6138MB DEBUG:</div>
+    <div> Block 18/280 (7,8) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6135MB DEBUG:</div>
+    <div> Block 20/280 (7,6) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6132MB DEBUG:</div>
+    <div> Block 19/280 (7,7) rendered by GPU 0 in 153ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6129MB DEBUG:</div>
+    <div> Block 21/280 (7,5) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6126MB DEBUG:</div>
+    <div> Block 22/280 (7,4) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6123MB DEBUG:</div>
+    <div> Block 23/280 (8,4) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6120MB DEBUG:</div>
+    <div> Block 24/280 (9,4) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6117MB DEBUG:</div>
+    <div> Block 25/280 (10,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6114MB DEBUG:</div>
+    <div> Block 26/280 (11,4) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6111MB DEBUG:</div>
+    <div> Block 27/280 (12,4) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6108MB DEBUG:</div>
+    <div> Block 29/280 (12,6) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6106MB DEBUG:</div>
+    <div> Block 28/280 (12,5) rendered by GPU 0 in 134ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6104MB DEBUG:</div>
+    <div> Block 30/280 (12,7) rendered by GPU 1 in 117ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6101MB DEBUG:</div>
+    <div> Block 31/280 (12,8) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:32 6099MB DEBUG:</div>
+    <div> Block 32/280 (12,9) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6096MB DEBUG:</div>
+    <div> Block 33/280 (11,9) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6096MB DEBUG:</div>
+    <div> Block 34/280 (10,9) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6093MB DEBUG:</div>
+    <div> Block 35/280 (9,9) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6093MB DEBUG:</div>
+    <div> Block 36/280 (8,9) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6093MB DEBUG:</div>
+    <div> Block 38/280 (6,9) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6093MB DEBUG:</div>
+    <div> Block 39/280 (6,8) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6093MB DEBUG:</div>
+    <div> Block 40/280 (6,7) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6094MB DEBUG:</div>
+    <div> Block 41/280 (6,6) rendered by GPU 1 in 114ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6087MB DEBUG:</div>
+    <div> Block 42/280 (6,5) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:33 6079MB DEBUG:</div>
+    <div> Block 43/280 (6,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:34 6091MB DEBUG:</div>
+    <div> Block 44/280 (6,3) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:34 6099MB DEBUG:</div>
+    <div> Block 45/280 (7,3) rendered by GPU 1 in 117ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:34 6107MB DEBUG:</div>
+    <div> Block 46/280 (8,3) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:34 6107MB DEBUG:</div>
+    <div> Block 47/280 (9,3) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:34 6107MB DEBUG:</div>
+    <div> Block 48/280 (10,3) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:34 6107MB DEBUG:</div>
+    <div> Block 49/280 (11,3) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:34 6107MB DEBUG:</div>
+    <div> Block 50/280 (12,3) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:34 6107MB DEBUG:</div>
+    <div> Block 51/280 (13,3) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:34 6107MB DEBUG:</div>
+    <div> Block 52/280 (13,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:35 6107MB DEBUG:</div>
+    <div> Block 53/280 (13,5) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:35 6102MB DEBUG:</div>
+    <div> Block 54/280 (13,6) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:35 6110MB DEBUG:</div>
+    <div> Block 55/280 (13,7) rendered by GPU 1 in 117ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:35 6118MB DEBUG:</div>
+    <div> Block 56/280 (13,8) rendered by GPU 1 in 117ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:35 6122MB DEBUG:</div>
+    <div> Block 57/280 (13,9) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:37 6169MB DEBUG:</div>
+    <div> Block 37/280 (6,10) rendered by GPU 0 in 4167ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:37 6187MB DEBUG:</div>
+    <div> Block 58/280 (13,10) rendered by GPU 1 in 2004ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:39 6199MB DEBUG:</div>
+    <div> Block 59/280 (12,10) rendered by GPU 0 in 2223ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:39 6199MB DEBUG:</div>
+    <div> Block 60/280 (11,10) rendered by GPU 1 in 2084ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:42 6151MB DEBUG:</div>
+    <div> Block 62/280 (9,10) rendered by GPU 1 in 3303ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:42 6151MB DEBUG:</div>
+    <div> Block 61/280 (10,10) rendered by GPU 0 in 3394ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:46 6148MB DEBUG:</div>
+    <div> Block 63/280 (8,10) rendered by GPU 1 in 3288ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:46 6148MB DEBUG:</div>
+    <div> Block 64/280 (7,10) rendered by GPU 0 in 3517ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:49 6161MB DEBUG:</div>
+    <div> Block 66/280 (5,10) rendered by GPU 0 in 3298ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:49 6161MB DEBUG:</div>
+    <div> Block 67/280 (5,9) rendered by GPU 0 in 132ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 68/280 (5,8) rendered by GPU 0 in 131ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 69/280 (5,7) rendered by GPU 0 in 136ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 70/280 (5,6) rendered by GPU 0 in 137ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 65/280 (5,11) rendered by GPU 1 in 4219ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 71/280 (5,5) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 72/280 (5,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 73/280 (5,3) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 74/280 (5,2) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 75/280 (6,2) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 76/280 (7,2) rendered by GPU 1 in 114ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 78/280 (9,2) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:50 6161MB DEBUG:</div>
+    <div> Block 77/280 (8,2) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 79/280 (10,2) rendered by GPU 1 in 114ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 80/280 (11,2) rendered by GPU 0 in 133ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 81/280 (12,2) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 82/280 (13,2) rendered by GPU 0 in 141ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 83/280 (14,2) rendered by GPU 1 in 118ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 84/280 (14,3) rendered by GPU 0 in 150ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 85/280 (14,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 86/280 (14,5) rendered by GPU 0 in 151ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 87/280 (14,6) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 89/280 (14,8) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 88/280 (14,7) rendered by GPU 0 in 151ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:51 6161MB DEBUG:</div>
+    <div> Block 90/280 (14,9) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:53 6179MB DEBUG:</div>
+    <div> Block 91/280 (14,10) rendered by GPU 0 in 2105ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:55 6179MB DEBUG:</div>
+    <div> Block 92/280 (14,11) rendered by GPU 1 in 4273ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:11:58 6171MB DEBUG:</div>
+    <div> Block 93/280 (13,11) rendered by GPU 0 in 4732ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:00 6171MB DEBUG:</div>
+    <div> Block 94/280 (12,11) rendered by GPU 1 in 4412ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:03 6172MB DEBUG:</div>
+    <div> Block 95/280 (11,11) rendered by GPU 0 in 4956ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:04 6172MB DEBUG:</div>
+    <div> Block 96/280 (10,11) rendered by GPU 1 in 4344ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:08 6172MB DEBUG:</div>
+    <div> Block 97/280 (9,11) rendered by GPU 0 in 4579ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:08 6172MB DEBUG:</div>
+    <div> Block 98/280 (8,11) rendered by GPU 1 in 4120ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:12 6172MB DEBUG:</div>
+    <div> Block 99/280 (7,11) rendered by GPU 0 in 4623ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:13 6172MB DEBUG:</div>
+    <div> Block 100/280 (6,11) rendered by GPU 1 in 4275ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:15 6171MB DEBUG:</div>
+    <div> Block 101/280 (4,12) rendered by GPU 0 in 3110ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:17 6171MB DEBUG:</div>
+    <div> Block 102/280 (4,11) rendered by GPU 1 in 4266ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:17 6171MB DEBUG:</div>
+    <div> Block 104/280 (4,9) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:17 6171MB DEBUG:</div>
+    <div> Block 105/280 (4,8) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:17 6171MB DEBUG:</div>
+    <div> Block 106/280 (4,7) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:17 6171MB DEBUG:</div>
+    <div> Block 107/280 (4,6) rendered by GPU 1 in 114ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:17 6171MB DEBUG:</div>
+    <div> Block 108/280 (4,5) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:18 6171MB DEBUG:</div>
+    <div> Block 109/280 (4,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:18 6171MB DEBUG:</div>
+    <div> Block 110/280 (4,3) rendered by GPU 1 in 114ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:18 6171MB DEBUG:</div>
+    <div> Block 111/280 (4,2) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:18 6171MB DEBUG:</div>
+    <div> Block 112/280 (4,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:18 6171MB DEBUG:</div>
+    <div> Block 113/280 (5,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:18 6171MB DEBUG:</div>
+    <div> Block 114/280 (6,1) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:18 6171MB DEBUG:</div>
+    <div> Block 115/280 (7,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:18 6171MB DEBUG:</div>
+    <div> Block 116/280 (8,1) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 117/280 (9,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 118/280 (10,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 103/280 (4,10) rendered by GPU 0 in 3522ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 119/280 (11,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 121/280 (13,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 120/280 (12,1) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 122/280 (14,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 123/280 (15,1) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 124/280 (15,2) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 125/280 (15,3) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 126/280 (15,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 127/280 (15,5) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 128/280 (15,6) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:19 6171MB DEBUG:</div>
+    <div> Block 130/280 (15,8) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:20 6171MB DEBUG:</div>
+    <div> Block 129/280 (15,7) rendered by GPU 0 in 164ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:20 6171MB DEBUG:</div>
+    <div> Block 131/280 (15,9) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:21 6166MB DEBUG:</div>
+    <div> Block 132/280 (15,10) rendered by GPU 0 in 1905ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:24 6167MB DEBUG:</div>
+    <div> Block 133/280 (15,11) rendered by GPU 1 in 4315ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:25 6167MB DEBUG:</div>
+    <div> Block 134/280 (15,12) rendered by GPU 0 in 3301ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:27 6159MB DEBUG:</div>
+    <div> Block 135/280 (14,12) rendered by GPU 1 in 3109ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:28 6160MB DEBUG:</div>
+    <div> Block 136/280 (13,12) rendered by GPU 0 in 3753ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:30 6161MB DEBUG:</div>
+    <div> Block 137/280 (12,12) rendered by GPU 1 in 3294ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:32 6160MB DEBUG:</div>
+    <div> Block 138/280 (11,12) rendered by GPU 0 in 3564ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:34 6161MB DEBUG:</div>
+    <div> Block 139/280 (10,12) rendered by GPU 1 in 3208ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:36 6161MB DEBUG:</div>
+    <div> Block 140/280 (9,12) rendered by GPU 0 in 3503ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:37 6161MB DEBUG:</div>
+    <div> Block 141/280 (8,12) rendered by GPU 1 in 3054ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:39 6161MB DEBUG:</div>
+    <div> Block 142/280 (7,12) rendered by GPU 0 in 3344ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:39 6161MB DEBUG:</div>
+    <div> Block 143/280 (6,12) rendered by GPU 1 in 2893ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:41 6165MB DEBUG:</div>
+    <div> Block 145/280 (3,13) rendered by GPU 1 in 1604ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:42 6166MB DEBUG:</div>
+    <div> Block 144/280 (5,12) rendered by GPU 0 in 3113ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:44 6169MB DEBUG:</div>
+    <div> Block 146/280 (3,12) rendered by GPU 1 in 2936ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 147/280 (3,11) rendered by GPU 0 in 4818ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 148/280 (3,10) rendered by GPU 1 in 2920ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 149/280 (3,9) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 150/280 (3,8) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 151/280 (3,7) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 152/280 (3,6) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 153/280 (3,5) rendered by GPU 0 in 146ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 154/280 (3,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 156/280 (3,2) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:47 6169MB DEBUG:</div>
+    <div> Block 155/280 (3,3) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 157/280 (3,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 158/280 (3,0) rendered by GPU 0 in 153ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 159/280 (4,0) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 160/280 (5,0) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 161/280 (6,0) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 162/280 (7,0) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 163/280 (8,0) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 165/280 (10,0) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 164/280 (9,0) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 166/280 (11,0) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 167/280 (12,0) rendered by GPU 0 in 151ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 168/280 (13,0) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 169/280 (14,0) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 170/280 (15,0) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 171/280 (16,0) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:48 6169MB DEBUG:</div>
+    <div> Block 172/280 (16,1) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:49 6169MB DEBUG:</div>
+    <div> Block 174/280 (16,3) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:49 6169MB DEBUG:</div>
+    <div> Block 173/280 (16,2) rendered by GPU 0 in 152ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:49 6169MB DEBUG:</div>
+    <div> Block 175/280 (16,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:49 6169MB DEBUG:</div>
+    <div> Block 176/280 (16,5) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:49 6169MB DEBUG:</div>
+    <div> Block 177/280 (16,6) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:49 6169MB DEBUG:</div>
+    <div> Block 178/280 (16,7) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:49 6169MB DEBUG:</div>
+    <div> Block 179/280 (16,8) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:49 6171MB DEBUG:</div>
+    <div> Block 180/280 (16,9) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:51 6173MB DEBUG:</div>
+    <div> Block 181/280 (16,10) rendered by GPU 1 in 2546ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:54 6166MB DEBUG:</div>
+    <div> Block 182/280 (16,11) rendered by GPU 0 in 5110ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:54 6166MB DEBUG:</div>
+    <div> Block 183/280 (16,12) rendered by GPU 1 in 2863ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:55 6158MB DEBUG:</div>
+    <div> Block 184/280 (16,13) rendered by GPU 0 in 1300ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:55 6158MB DEBUG:</div>
+    <div> Block 185/280 (15,13) rendered by GPU 1 in 1155ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:57 6158MB DEBUG:</div>
+    <div> Block 187/280 (13,13) rendered by GPU 1 in 1290ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:57 6158MB DEBUG:</div>
+    <div> Block 186/280 (14,13) rendered by GPU 0 in 1378ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:58 6158MB DEBUG:</div>
+    <div> Block 188/280 (12,13) rendered by GPU 1 in 1259ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:58 6158MB DEBUG:</div>
+    <div> Block 189/280 (11,13) rendered by GPU 0 in 1337ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:12:59 6158MB DEBUG:</div>
+    <div> Block 190/280 (10,13) rendered by GPU 1 in 1320ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:00 6158MB DEBUG:</div>
+    <div> Block 191/280 (9,13) rendered by GPU 0 in 1560ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:01 6159MB DEBUG:</div>
+    <div> Block 192/280 (8,13) rendered by GPU 1 in 1558ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:01 6159MB DEBUG:</div>
+    <div> Block 193/280 (7,13) rendered by GPU 0 in 1673ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:02 6161MB DEBUG:</div>
+    <div> Block 194/280 (6,13) rendered by GPU 1 in 1489ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:03 6162MB DEBUG:</div>
+    <div> Block 195/280 (5,13) rendered by GPU 0 in 1589ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:04 6165MB DEBUG:</div>
+    <div> Block 196/280 (4,13) rendered by GPU 1 in 1521ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:05 6166MB DEBUG:</div>
+    <div> Block 197/280 (2,13) rendered by GPU 0 in 1870ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:07 6167MB DEBUG:</div>
+    <div> Block 198/280 (2,12) rendered by GPU 1 in 2987ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:09 6159MB DEBUG:</div>
+    <div> Block 199/280 (2,11) rendered by GPU 0 in 4535ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:09 6159MB DEBUG:</div>
+    <div> Block 201/280 (2,9) rendered by GPU 0 in 132ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6159MB DEBUG:</div>
+    <div> Block 202/280 (2,8) rendered by GPU 0 in 131ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6159MB DEBUG:</div>
+    <div> Block 200/280 (2,10) rendered by GPU 1 in 2826ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6159MB DEBUG:</div>
+    <div> Block 203/280 (2,7) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6159MB DEBUG:</div>
+    <div> Block 204/280 (2,6) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6159MB DEBUG:</div>
+    <div> Block 205/280 (2,5) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6159MB DEBUG:</div>
+    <div> Block 206/280 (2,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6159MB DEBUG:</div>
+    <div> Block 207/280 (2,3) rendered by GPU 0 in 142ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6159MB DEBUG:</div>
+    <div> Block 208/280 (2,2) rendered by GPU 1 in 117ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6160MB DEBUG:</div>
+    <div> Block 210/280 (2,0) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6160MB DEBUG:</div>
+    <div> Block 209/280 (2,1) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6160MB DEBUG:</div>
+    <div> Block 211/280 (17,0) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6160MB DEBUG:</div>
+    <div> Block 212/280 (17,1) rendered by GPU 0 in 152ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6160MB DEBUG:</div>
+    <div> Block 213/280 (17,2) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:10 6160MB DEBUG:</div>
+    <div> Block 214/280 (17,3) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:11 6160MB DEBUG:</div>
+    <div> Block 215/280 (17,4) rendered by GPU 1 in 117ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:11 6160MB DEBUG:</div>
+    <div> Block 216/280 (17,5) rendered by GPU 0 in 143ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:11 6160MB DEBUG:</div>
+    <div> Block 217/280 (17,6) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:11 6160MB DEBUG:</div>
+    <div> Block 219/280 (17,8) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:11 6160MB DEBUG:</div>
+    <div> Block 218/280 (17,7) rendered by GPU 0 in 133ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:11 6160MB DEBUG:</div>
+    <div> Block 220/280 (17,9) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:15 6160MB DEBUG:</div>
+    <div> Block 221/280 (17,10) rendered by GPU 0 in 4027ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:15 6160MB DEBUG:</div>
+    <div> Block 222/280 (17,11) rendered by GPU 1 in 4609ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:17 6161MB DEBUG:</div>
+    <div> Block 224/280 (17,13) rendered by GPU 1 in 1241ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:18 6153MB DEBUG:</div>
+    <div> Block 223/280 (17,12) rendered by GPU 0 in 2831ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:18 6157MB DEBUG:</div>
+    <div> Block 225/280 (1,13) rendered by GPU 1 in 1703ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:21 6158MB DEBUG:</div>
+    <div> Block 226/280 (1,12) rendered by GPU 0 in 3314ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:23 6159MB DEBUG:</div>
+    <div> Block 227/280 (1,11) rendered by GPU 1 in 4094ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:23 6159MB DEBUG:</div>
+    <div> Block 229/280 (1,9) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:23 6159MB DEBUG:</div>
+    <div> Block 230/280 (1,8) rendered by GPU 1 in 114ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:23 6159MB DEBUG:</div>
+    <div> Block 231/280 (1,7) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:23 6159MB DEBUG:</div>
+    <div> Block 232/280 (1,6) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:23 6159MB DEBUG:</div>
+    <div> Block 233/280 (1,5) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:23 6159MB DEBUG:</div>
+    <div> Block 234/280 (1,4) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:23 6159MB DEBUG:</div>
+    <div> Block 235/280 (1,3) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:23 6159MB DEBUG:</div>
+    <div> Block 236/280 (1,2) rendered by GPU 1 in 114ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6159MB DEBUG:</div>
+    <div> Block 237/280 (1,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6159MB DEBUG:</div>
+    <div> Block 238/280 (1,0) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6159MB DEBUG:</div>
+    <div> Block 239/280 (18,0) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6159MB DEBUG:</div>
+    <div> Block 240/280 (18,1) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6160MB DEBUG:</div>
+    <div> Block 228/280 (1,10) rendered by GPU 0 in 3088ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6160MB DEBUG:</div>
+    <div> Block 241/280 (18,2) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6161MB DEBUG:</div>
+    <div> Block 243/280 (18,4) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6161MB DEBUG:</div>
+    <div> Block 242/280 (18,3) rendered by GPU 0 in 152ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6161MB DEBUG:</div>
+    <div> Block 244/280 (18,5) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6161MB DEBUG:</div>
+    <div> Block 245/280 (18,6) rendered by GPU 0 in 145ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6161MB DEBUG:</div>
+    <div> Block 246/280 (18,7) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:24 6161MB DEBUG:</div>
+    <div> Block 247/280 (18,8) rendered by GPU 0 in 144ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:25 6161MB DEBUG:</div>
+    <div> Block 248/280 (18,9) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:28 6161MB DEBUG:</div>
+    <div> Block 249/280 (18,10) rendered by GPU 0 in 3531ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:29 6161MB DEBUG:</div>
+    <div> Block 250/280 (18,11) rendered by GPU 1 in 4408ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:30 6161MB DEBUG:</div>
+    <div> Block 252/280 (18,13) rendered by GPU 1 in 1186ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:31 6153MB DEBUG:</div>
+    <div> Block 251/280 (18,12) rendered by GPU 0 in 2614ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:32 6153MB DEBUG:</div>
+    <div> Block 253/280 (0,13) rendered by GPU 1 in 1703ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:34 6155MB DEBUG:</div>
+    <div> Block 254/280 (0,12) rendered by GPU 0 in 3521ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:36 6155MB DEBUG:</div>
+    <div> Block 255/280 (0,11) rendered by GPU 1 in 4008ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:36 6156MB DEBUG:</div>
+    <div> Block 257/280 (0,9) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:36 6156MB DEBUG:</div>
+    <div> Block 258/280 (0,8) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:36 6157MB DEBUG:</div>
+    <div> Block 259/280 (0,7) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:36 6157MB DEBUG:</div>
+    <div> Block 260/280 (0,6) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:36 6157MB DEBUG:</div>
+    <div> Block 261/280 (0,5) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6157MB DEBUG:</div>
+    <div> Block 262/280 (0,4) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6157MB DEBUG:</div>
+    <div> Block 263/280 (0,3) rendered by GPU 1 in 116ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6157MB DEBUG:</div>
+    <div> Block 264/280 (0,2) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6157MB DEBUG:</div>
+    <div> Block 265/280 (0,1) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6157MB DEBUG:</div>
+    <div> Block 266/280 (0,0) rendered by GPU 1 in 115ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6157MB DEBUG:</div>
+    <div> Block 256/280 (0,10) rendered by GPU 0 in 2915ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6157MB DEBUG:</div>
+    <div> Block 267/280 (19,0) rendered by GPU 1 in 112ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6158MB DEBUG:</div>
+    <div> Block 268/280 (19,1) rendered by GPU 0 in 138ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6158MB DEBUG:</div>
+    <div> Block 269/280 (19,2) rendered by GPU 1 in 112ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6159MB DEBUG:</div>
+    <div> Block 271/280 (19,4) rendered by GPU 1 in 112ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6159MB DEBUG:</div>
+    <div> Block 270/280 (19,3) rendered by GPU 0 in 138ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6159MB DEBUG:</div>
+    <div> Block 272/280 (19,5) rendered by GPU 1 in 112ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:37 6159MB DEBUG:</div>
+    <div> Block 273/280 (19,6) rendered by GPU 0 in 138ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:38 6159MB DEBUG:</div>
+    <div> Block 274/280 (19,7) rendered by GPU 1 in 111ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:38 6159MB DEBUG:</div>
+    <div> Block 275/280 (19,8) rendered by GPU 0 in 138ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:38 6159MB DEBUG:</div>
+    <div> Block 276/280 (19,9) rendered by GPU 1 in 112ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:40 6159MB DEBUG:</div>
+    <div> Block 277/280 (19,10) rendered by GPU 0 in 2026ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:40 6159MB DEBUG:</div>
+    <div> Block 278/280 (19,11) rendered by GPU 1 in 2482ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6159MB DEBUG:</div>
+    <div> Block 280/280 (19,13) rendered by GPU 1 in 762ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6157MB DEBUG:</div>
+    <div> Block 279/280 (19,12) rendered by GPU 0 in 1503ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6157MB DEBUG:</div>
+    <div> Processing blocks...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6134MB DEBUG:</div>
+    <div> Time to render 280 blocks: 2m:10s
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:13:41 6117MB INFO:</div>
+    <div>
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:13:41 6117MB INFO:</div>
+    <div><b>Rendering time: 2m:28s (2 GPU(s) used)</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div><b>Scene statistics</b>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> General counts
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Proxies: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Proxy instances: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Meshes: 3 (3 TriMeshes, 0 HairMeshes)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Instances: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Point cloud points: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Lights: 1
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Volume grids: 0 (0 unique)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Sprite textures: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Geometry
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Unique triangles pre tessellation: 464
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Unique triangles post tessellation: 464
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Unique points: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Unique hair strands: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Unique hair strand segments: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Total triangles: 464
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Total points: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Total hair strands: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Total hair strand segments: 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Largest triangle meshes:
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> 257 triangles : Plane001
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> 116 triangles : Wall low
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> 91 triangles : Roads
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> GPU Memory
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Device 0 geometry PCIe uploads: 25.38 KB (cachesize: 1.06 MB)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Device 0 texture PCIe uploads: 794.14 MB (cachesize: 1.45 GB)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Device 1 geometry PCIe uploads: 25.38 KB (cachesize: 1.06 MB)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Device 1 texture PCIe uploads: 578.62 MB (cachesize: 1.50 GB)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Matrices (for instances/points): 0 B
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Rays: 3.00 GB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Sprite textures: 0 B
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Volume grids: 0 B
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Textures
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Device 0 stream and upload time: 0.5s
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> File loading time: 39ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> File decompression time: 0.1s
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Average GPU cache hits: 98%
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Device 1 stream and upload time: 0.5s
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> File loading time: 47ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> File decompression time: 0.2s
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Average GPU cache hits: 97%
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> GPU Ray Accel. And Geometry Memory Stats (rough)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Acceleration Structures: 8.30 KB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Main primitive data: 13.78 KB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Extra primitive data: 25.38 KB
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Primitive loading time: 0ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div> Tess/Disp time: 0ms
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6117MB DEBUG:</div>
+    <div>
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6116MB DEBUG:</div>
+    <div>RS_Renderer_Render END
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:13:41 6094MB INFO:</div>
+    <div>Rendering done - total time for frame 0: 2m:28s
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6094MB DEBUG:</div>
+    <div>[0x0000015D5A956500] rsMaxRenderer::Close called from thread 8512
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:41 6094MB DEBUG:</div>
+    <div>Render session complete. No pending IPR session. Purging scene.
+    </div>
+</div>
+<div class="INFO line">
+    <div>13:13:46 6084MB INFO:</div>
+    <div>License returned
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:51 6084MB DEBUG:</div>
+    <div>Freeing GPU mem...(device 0)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:51 6084MB DEBUG:</div>
+    <div> Done (CUDA reported free mem before: 949 MB, after: 5783 MB)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:51 6084MB DEBUG:</div>
+    <div>Freeing GPU mem...(device 1)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:13:51 6084MB DEBUG:</div>
+    <div> Done (CUDA reported free mem before: 621 MB, after: 6059 MB)
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:49 5747MB DEBUG:</div>
+    <div>OnSystemShutdown
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:49 5718MB DEBUG:</div>
+    <div>Purging 0 shaderball scenes
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:49 5718MB DEBUG:</div>
+    <div>Shutdown Rendering Sub-Systems...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:49 5718MB DEBUG:</div>
+    <div> Shutdown mem management thread...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:50 3144MB DEBUG:</div>
+    <div> Shutdown GPU Devices...
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:50 3144MB DEBUG:</div>
+    <div> Device 1
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:50 2973MB DEBUG:</div>
+    <div> Device 0
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:50 2205MB DEBUG:</div>
+    <div> Devices shut down ok
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:50 2205MB DEBUG:</div>
+    <div> Finished Shutting down Rendering Sub-Systems
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:50 2104MB DEBUG:</div>
+    <div>Redshift Global Utility Plugin STOP
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:51 1985MB DEBUG:</div>
+    <div>Shutdown general systems
+    </div>
+</div>
+<div class="DEBUG line">
+    <div>13:22:51 1642MB DEBUG:</div>
+    <div> Cleanly finished shutting down Redshift
+    </div>
+</div>
+</body>
+
+</html>
