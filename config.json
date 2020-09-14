@@ -1,0 +1,5 @@
+{
+  "access_token": "<IMGUR_ACCESS_TOKEN>",
+  "service": "<SERVICE_NAME>",
+  "sg_window_length": 25
+}
