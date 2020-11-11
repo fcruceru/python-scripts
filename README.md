@@ -9,7 +9,7 @@ This script will run different OpenGrok queries and aggregate dependency statist
 
  - Number of Imports Used
  - Number of Classes the package is used in
- - Number of Imports Used
+ - Number of Statements Used
 
 ![Example of one set of generated charts](https://i.imgur.com/Xi6KbKu.png)
 An extra set of charts is generated for a comparison view of normalized, aggregated values for all of the 3 main statistics to serve to gain a better understanding of the relative weight of each repo compared to its peers.
